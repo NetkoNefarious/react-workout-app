@@ -14,6 +14,8 @@ export default function App() {
     if (muscles.length > 0) {
       const newWorkout = generateWorkout({ poison, muscles, goals });
       setWorkout(newWorkout);
+
+      window.location.href = '#workout'
     }
   }
 
