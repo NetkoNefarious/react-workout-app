@@ -19,7 +19,7 @@ export default function ExerciseCard({ exercise, index }) {
             </div>
             <div className="flex flex-col">
                 <h3 className="text-slate-400 text-sm">Muscle groups</h3>
-                <p className="capitalize">{exercise.muscle.join(' & ')}</p>
+                <p className="capitalize">{exercise.muscles.join(' & ')}</p>
             </div>
             <div className="flex flex-col bg-slate-950 rounded gap-2">
                 {exercise.description.split('___').map((val) => (

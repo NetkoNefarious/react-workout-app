@@ -8,11 +8,11 @@ export default function App() {
   const [workout, setWorkout] = useState(null)
   const [poison, setPoison] = useState('individual');
   const [muscles, setMuscles] = useState([]);
-  const [goals, setGoals] = useState('strength_power');
+  const [goal, setGoal] = useState('strength_power');
 
   function updateWorkout() {
     if (muscles.length > 0) {
-      const newWorkout = generateWorkout({ poison, muscles, goals });
+      const newWorkout = generateWorkout({ poison, muscles, goal });
       setWorkout(newWorkout);
 
       window.location.href = '#workout'
@@ -25,7 +25,7 @@ export default function App() {
     <Generator
       poison={poison} setPoison={setPoison}
       muscles={muscles} setMuscles={setMuscles}
-      goals={goals} setGoals={setGoals}
+      goals={goal} setGoals={setGoal}
       updateWorkout={updateWorkout} />
     {!!workout && <Workout workout={workout} />}
   </main>
