@@ -1,11 +1,11 @@
-import { useState } from "react"
+import { createSignal } from "solid-js"
 
 /* eslint-disable react/prop-types */
 export default function ExerciseCard({ exercise, index }) {
-    const [setsCompleted, setSetsCompleted] = useState(0)
+    const [setsCompleted, setSetsCompleted] = createSignal(0)
 
     function handleSetIncrement() {
-        setSetsCompleted((setsCompleted + 1) % 6)
+        setSetsCompleted((setsCompleted() + 1) % 6)
     }
 
     return (
@@ -40,7 +40,7 @@ export default function ExerciseCard({ exercise, index }) {
                 ))}
                 <button onClick={handleSetIncrement} className="flex flex-col p-2 rounded border-[1.5px] duration-200 border-solid border-blue-900 hover:border-blue-600 w-full">
                     <h3 className="text-slate-400 text-sm capitalize">Sets completed</h3>
-                    <p className="font-medium">{setsCompleted}</p>
+                    <p className="font-medium">{setsCompleted()}</p>
                 </button>
             </div>
         </div>
