@@ -11,12 +11,9 @@
 
   function updateWorkout() {
     if (muscles.length > 0) {
-      const newWorkout = generateWorkout({ poison, muscles, goal });
-      workout = newWorkout;
+      workout = generateWorkout({ poison, muscles, goal });
       window.location.href = '#workout';
     }
-
-    console.log(muscles);
   }
 </script>
 
@@ -24,7 +21,7 @@
   class="min-h-screen flex flex-col bg-gradient-to-r from-slate-800 to-slate-950 text-white text-sm sm:text-base"
 >
   <Hero />
-  <Generator {poison} {muscles} goals={goal} {updateWorkout} />
+  <Generator bind:poison bind:muscles bind:goal {updateWorkout} />
   {#if workout}
     <Workout {workout} />
   {/if}

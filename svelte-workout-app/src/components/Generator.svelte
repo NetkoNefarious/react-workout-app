@@ -6,7 +6,7 @@
 
   export let poison;
   export let muscles;
-  export let goals;
+  export let goal;
   export let updateWorkout;
 
   let showModal = false;
@@ -102,9 +102,9 @@
     {#each Object.keys(SCHEMES) as scheme}
       <button
         class={'bg-slate-950 border py-3 px-4 rounded-lg duration-200 hover:border-blue-600 ' +
-          (scheme === goals ? 'border-blue-600' : 'border-blue-400')}
+          (scheme === goal ? 'border-blue-600' : 'border-blue-400')}
         on:click={() => {
-          goals = scheme;
+          goal = scheme;
         }}
       >
         <p class="capitalize">{scheme.replaceAll('_', ' ')}</p>

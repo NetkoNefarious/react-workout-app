@@ -11,7 +11,7 @@
   title={['The', 'DANGER', 'zone']}
 >
   <div class="flex flex-col gap-4">
-    {#each workout as [exercise, i]}
+    {#each workout as exercise, i}
       <ExerciseCard index={i} {exercise} />
     {/each}
   </div>
